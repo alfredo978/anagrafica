@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sportello MRZ</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Sportello</h1>
+    <p class="lede">Il telefono legge la carta. Qui arrivano le righe, già pronte da incollare nel gestionale. La webcam di questo PC non serve.</p>
+
+    <section class="panel">
+      <p>Sul telefono apri questo indirizzo. Al primo accesso il browser dice che la connessione non è privata: tocca <strong>Avanzate</strong> e poi <strong>Procedi</strong>. Senza quel passaggio la camera resta spenta.</p>
+      <p id="phone-url" class="big-url">Cerco l'indirizzo…</p>
+      <div id="qr"></div>
+      <p>Codice da digitare sul telefono: <code id="desk-code">----</code></p>
+    </section>
+
+    <section class="panel" style="margin-top: 1rem">
+      <p id="wait" class="waiting">In attesa di una carta.</p>
+      <div id="fields" class="fields" hidden></div>
+      <textarea id="lines" readonly hidden></textarea>
+      <div class="row">
+        <button id="copy" type="button" disabled>Copia le righe</button>
+        <button id="clear" type="button" class="secondary">Cancella dallo schermo</button>
+      </div>
+      <p id="hint"></p>
+    </section>
+  </div>
+  <script src="/vendor/qrcode.js"></script>
+  <script src="/banco.js"></script>
+</body>
+</html>
