@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Leggi MRZ</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="phone">
+  <div class="wrap">
+    <h1>Leggi la MRZ</h1>
+    <p class="lede">Inquadra le righe in fondo alla CIE o alla pagina del passaporto. Il PC dello sportello riceve il testo.</p>
+
+    <section id="code-screen" class="panel">
+      <label for="code">Codice sullo schermo del PC</label>
+      <div class="row">
+        <input id="code" inputmode="numeric" autocomplete="off" maxlength="4" placeholder="0000">
+        <button id="enter" type="button">Apri la camera</button>
+      </div>
+      <p id="code-error" class="warn"></p>
+    </section>
+
+    <section id="scan-screen" hidden>
+      <div class="stage">
+        <video id="video" playsinline autoplay muted></video>
+        <div id="guide"><span>righe in fondo</span></div>
+      </div>
+      <p id="status">Avvio la camera…</p>
+      <div class="row">
+        <button id="torch" type="button" class="secondary" hidden>Accendi la luce</button>
+        <button id="again" type="button" class="secondary" hidden>Altro documento</button>
+      </div>
+      <canvas id="preview" hidden></canvas>
+      <section id="result" class="panel" hidden></section>
+    </section>
+  </div>
+  <script src="/vendor/tesseract/tesseract.min.js"></script>
+  <script src="/mrz.js"></script>
+  <script src="/scan.js"></script>
+</body>
+</html>
