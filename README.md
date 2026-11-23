@@ -14,3 +14,16 @@ Dopo la prenotazione online, il gestionale a volte inviava l’utente a URL sul 
 ### Da fare lato gestionale (opzionale)
 
 Allineare in `prenotazione_pubblica.php` gli URL di `redirect_url` / `invito_documenti.url` e `gestione_link` al dominio `gestione.servizialcittadino.org`, così il sito non dipende solo dal fallback.
+
+## richiesta_protesi.php — 404 (2026-11-23)
+
+Il file **non era presente** sul gestionale. L’articolo [Protesi acustiche a Napoli](https://servizialcittadino.org/protesi-acustiche-napoli/) puntava a `richiesta_protesi.php`.
+
+### Sul sito WordPress (già fatto)
+
+- Pulsante **Invia dati e decreto** aggiornato: punta al form Otter nella stessa pagina (`#wp-block-themeisle-blocks-form-c8e2f21a`).
+
+### Sul gestionale (da caricare)
+
+- In repo: `gestione/richiesta_protesi.php` — redirect 302 al form sul sito.
+- Copiare il file nella root di `gestione.servizialcittadino.org` (accanto a `richiesta_isee.php`).
